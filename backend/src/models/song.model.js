@@ -4,7 +4,10 @@ const mongoose = require("mongoose");
 const songSchema = new mongoose.Schema({
     title : String,
     artist : String,
-    releaseDate : Date
+    album : String,
+    releaseDate : String,
+    audioUrl : String,
+    coverImage :String
 })
 
 
