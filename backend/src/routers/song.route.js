@@ -5,7 +5,7 @@ const multer = require("multer")
 const uploadFile = require("../services/storage.service")
 const id3 = require("node-id3")
 
-const upload = multer({Storage: multer.memoryStorage()})
+const upload = multer({storage: multer.memoryStorage()})
 
 
 router.post('/songs',upload.single('audio'),async(req, res)=>{
@@ -36,5 +36,12 @@ router.post('/songs',upload.single('audio'),async(req, res)=>{
        }
 })
 
+router.get("/songs", async(req, res)=>{
+       const songs = await songModel.find();
 
+       res.status(200).json({
+              message : "songs fetched succesfully",
+              songs
+       })
+})
 module.exports = router
