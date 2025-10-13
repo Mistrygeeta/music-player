@@ -27,11 +27,13 @@ const Upload = () => {
     try {
       const formData = new FormData();
       formData.append('audio', file);
-      const result= await axios.post('http://localhost:3000/songs', formData);
+      const result= await axios.post('https://music-player-np1y.onrender.com/songs', formData);
       console.log(result)
       setSuccess(true);
       setFile(null);
+      document.getElementById('audio').value = '';
     } catch (err) {
+      console.log("error in upload",err)
       setError('Upload failed.');
     }
     setUploading(false);
