@@ -14,6 +14,7 @@ router.post('/songs',upload.single('audio'),async(req, res)=>{
        const base64File = Buffer.from(buffer).toString("base64")
        const response = id3.read(buffer)
        const result = await uploadFile(base64File, "music")
+       console.log(req.body)
        const coverImageResult = await uploadFile(Buffer.from(response.image.imageBuffer).toString("base64"),'coverImage')
        
        const song = await songModel.create({
