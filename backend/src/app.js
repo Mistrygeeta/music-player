@@ -1,10 +1,13 @@
+const cors = require("cors")
 const express = require("express");
 const songRoutes = require("./routers/song.route")
-const cors = require("cors")
+
 const app = express()
 
 app.use(cors({
-  origin: ["http://music-player-three-omega.vercel.app"], // <-- your frontend URL
+  origin: ["http://music-player-three-omega.vercel.app",
+    "https://music-player-three-omega.vercel.app"
+  ], 
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }))
