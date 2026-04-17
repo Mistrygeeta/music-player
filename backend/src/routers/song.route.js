@@ -8,7 +8,7 @@ const id3 = require("node-id3")
 const upload = multer({storage: multer.memoryStorage()})
 
 
-router.post('/songs',upload.single('audio'),async(req, res)=>{
+router.post('/songs',upload.single('audio'),async(req, res)=>{ 
        try{
        const buffer = req.file.buffer
        const base64File = Buffer.from(buffer).toString("base64")

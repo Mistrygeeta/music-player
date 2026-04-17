@@ -13,7 +13,7 @@ const Home = () => {
   const audioRef = useRef(new Audio());
 
   useEffect(() => {
-    axios.get("https://music-player-np1y.onrender.com/songs")
+    axios.get("https://music-player-1-g0cu.onrender.com/songs")
       .then(res => {
         if (res.data && res.data.songs) {
           setSongs(res.data.songs);
