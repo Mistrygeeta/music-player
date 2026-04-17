@@ -27,7 +27,7 @@ const Upload = () => {
     try {
       const formData = new FormData();
       formData.append('audio', file);
-      const result= await axios.post('https://music-player-np1y.onrender.com/songs', formData);
+      const result= await axios.post('https://music-player-1-g0cu.onrender.com/songs', formData);
       console.log(result)
       setSuccess(true);
       setFile(null);
